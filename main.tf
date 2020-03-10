@@ -75,25 +75,15 @@ resource "mysql_database" "db" {
 
 ################################################################################
 resource "mysql_grant" "rw" {
-  user     = mysql_user.rw.user
-  host     = mysql_user.rw.host
-  database = mysql_database.db.name
-  privileges = [
-    "ALTER",
-    "ALTER ROUTINE",
-    "SELECT",
-    "UPDATE",
-    "DELETE",
-    "CREATE",
-    "DROP",
-  ]
+  user       = mysql_user.rw.user
+  host       = mysql_user.rw.host
+  database   = mysql_database.db.name
+  privileges = var.rw_privileges
 }
 
 resource "mysql_grant" "ro" {
-  user     = mysql_user.ro.user
-  host     = mysql_user.ro.host
-  database = mysql_database.db.name
-  privileges = [
-    "SELECT",
-  ]
+  user       = mysql_user.ro.user
+  host       = mysql_user.ro.host
+  database   = mysql_database.db.name
+  privileges = var.ro_privileges
 }

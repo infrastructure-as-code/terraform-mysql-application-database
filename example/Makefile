@@ -27,7 +27,7 @@ clean:
 
 ################################################################################
 # test database
-db_image = mysql:5.7
+db_image = mysql:8
 db_container = mysql_692feab8
 db_name = hello
 db_port = 21830

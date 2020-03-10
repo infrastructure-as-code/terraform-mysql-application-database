@@ -21,6 +21,8 @@ module "db" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | database\_name | Name of database to be created. | `string` | n/a | yes |
+| ro\_privileges | MySQL privileges for read-only user | `list(string)` | <pre>[<br>  "SELECT"<br>]</pre> | no |
+| rw\_privileges | MySQL privileges for read-write user | `list(string)` | <pre>[<br>  "ALTER",<br>  "ALTER ROUTINE",<br>  "SELECT",<br>  "UPDATE",<br>  "DELETE",<br>  "CREATE",<br>  "DROP"<br>]</pre> | no |
 
 ## Outputs
 
