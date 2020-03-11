@@ -1,15 +1,15 @@
 output "db1_rw_mysql" {
-  value = "MYSQL_PWD=${module.db1.rw_password} mysql --host=${var.mysql_host} --port=${var.mysql_port} --database=${module.db1.database_name} --user=${module.db1.rw_user}"
+  value = module.db1_rw_url.cli_command
 }
 
 output "db1_ro_mysql" {
-  value = "MYSQL_PWD=${module.db1.ro_password} mysql --host=${var.mysql_host} --port=${var.mysql_port} --database=${module.db1.database_name} --user=${module.db1.ro_user}"
+  value = module.db1_ro_url.cli_command
 }
 
 output "db2_rw_mysql" {
-  value = "MYSQL_PWD=${module.db2.rw_password} mysql --host=${var.mysql_host} --port=${var.mysql_port} --database=${module.db2.database_name} --user=${module.db2.rw_user}"
+  value = module.db2_rw_url.cli_command
 }
 
 output "db2_ro_mysql" {
-  value = "MYSQL_PWD=${module.db2.ro_password} mysql --host=${var.mysql_host} --port=${var.mysql_port} --database=${module.db2.database_name} --user=${module.db2.ro_user}"
+  value = module.db2_ro_url.cli_command
 }
