@@ -7,13 +7,7 @@ variable "rw_privileges" {
   type        = list(string)
   description = "MySQL privileges for read-write user"
   default = [
-    "ALTER",
-    "ALTER ROUTINE",
-    "SELECT",
-    "UPDATE",
-    "DELETE",
-    "CREATE",
-    "DROP",
+    "ALL PRIVILEGES",
   ]
 }
 
